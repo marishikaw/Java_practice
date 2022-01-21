@@ -33,5 +33,12 @@ public class Chapter04 {
 		for(int value : scores2) {
 			System.out.print(value + " ");
 		}
+		System.out.println("");
+		
+		int[] arrayA = {1, 2, 3};
+		int[] arrayB;
+		arrayB = arrayA;
+		arrayB[0] =100;
+		System.out.println(arrayA[0]);
 	}
 }
