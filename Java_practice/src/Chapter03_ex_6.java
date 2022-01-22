@@ -1,5 +1,5 @@
 
-public class Chapter03_3_6 {
+public class Chapter03_ex_6 {
 	public static void main(String[] args) {
 		System.out.println("【数当てゲーム】");
 		int ans = new java.util.Random().nextInt(9);

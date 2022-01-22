@@ -21,5 +21,24 @@ public class Chapter02 {
 		int age2 = new java.util.Scanner(System.in).nextInt();
 		System.out.println
 			("ようこそ、" + age2 + "歳の" + name + "さん");
+		
+//		2-1
+		int x = 5;
+		int y = 10;
+		String ans = "x+yは" + (x + y);
+		System.out.println(ans);
+		
+//		2-3
+		System.out.println("ようこそ占いの館へ");
+		System.out.println("あなたの名前を入力してください。");
+		String name2 = new java.util.Scanner(System.in).nextLine();
+		System.out.println("あなたの年齢を入力してください。");
+		String ageString = new java.util.Scanner(System.in).nextLine();
+		int age3 = Integer.parseInt(ageString);
+		int fortune = new java.util.Random().nextInt(4);
+		++fortune;
+		System.out.println("占いの結果が出ました！");
+		System.out.println(age3 + "歳の" + name2 + "さん、あなたの運気番号は" + fortune + "です");
+		System.out.println("１：大吉　２：中吉　３：吉　４：凶");
 	}
 }

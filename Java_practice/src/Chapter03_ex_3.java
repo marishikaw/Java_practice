@@ -1,5 +1,5 @@
 
-public class Chapter03_3_3 {
+public class Chapter03_ex_3 {
 	public static void main(String[] args) {
 		int isHungry = 1;
 		String food = "banana";

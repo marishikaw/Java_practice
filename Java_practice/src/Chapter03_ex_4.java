@@ -1,5 +1,5 @@
 
-public class Chapter03_3_4 {
+public class Chapter03_ex_4 {
 	public static void main(String[] args) {
 		boolean tenki = false;
 		if (tenki == true) {

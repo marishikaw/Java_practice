@@ -40,5 +40,21 @@ public class Chapter04 {
 		arrayB = arrayA;
 		arrayB[0] =100;
 		System.out.println(arrayA[0]);
+		
+		String str = "Javaで開発";
+		System.out.println(str.length());
+		
+		int[][] scores3 = new int [2][3];
+		scores3[0][0] =40;
+		scores3[0][1] =50;
+		scores3[0][2] =60;
+		scores3[1][0] =80;
+		scores3[1][1] =60;
+		scores3[1][2] =70;
+		System.out.println(scores3[1][1]);
+		
+		int[][] scores4 = {{40, 50, 60}, {80, 60, 70}};
+		System.out.println(scores4.length);
+		System.out.println(scores4[0].length);
 	}
 }
