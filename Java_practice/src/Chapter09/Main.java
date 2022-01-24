@@ -9,6 +9,7 @@ public class Main {
 		Hero h1 = new Hero("ミナト");
 		h1.sword = s;
 		System.out.println("現在の武器は" + h1.sword.name);
+		h1.attack();
 		
 		Hero h2 = new Hero();
 		
