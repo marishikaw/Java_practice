@@ -10,8 +10,8 @@ public class Wizard {
 	public void heal(Hero h) {
 		int basePoint = 10;
 		int recoverPoint = (int)(basePoint * this.getWand().getPower());
-		h.setHp(h.getHp + recoverPoint);
-		System.out.println(h.getName() + "のHPを" + recoverPoint + "回復した！");
+//		h.setHp(h.getHp + recoverPoint);
+//		System.out.println(h.getName() + "のHPを" + recoverPoint + "回復した！");
 	}
 	public int getHp() {
 		return this.hp;
@@ -39,7 +39,7 @@ public class Wizard {
 	public void setName(String name) {
 		if (name == null || name.length() < 3) {
 			throw new IllegalArgumentException
-				("魔法使いに設定されようとしている名前が異常です")
+				("魔法使いに設定されようとしている名前が異常です");
 		}
 		this.name = name;
 	}
@@ -49,7 +49,7 @@ public class Wizard {
 	public void setWand(Wand wand) {
 		if (wand == null) {
 			throw new IllegalArgumentException
-				("設定されようとしている杖がnullです")
+				("設定されようとしている杖がnullです");
 		}
 		this.wand = wand;
 	}
