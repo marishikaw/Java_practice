@@ -1,7 +1,13 @@
 package Chapter15;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class Main {
 	public static void main(String[] args) {
+		long start = System.currentTimeMillis();
+		
 		String s1 = "スッキリJava";
 		String s2 = "Java";
 		String s3 = "java";
@@ -38,5 +44,34 @@ public class Main {
 		
 		String w2 = s6.replaceAll("[beh]", "X");
 		System.out.println(w2);
+		
+		System.out.printf("製品番号%s-%02d", "SJV", 3);
+		System.out.println("");
+		
+		long end = System.currentTimeMillis();
+		System.out.println("処理にかかった時間は…" + (end - start) + "ミリ秒でした");
+		
+		Date now = new Date();
+		System.out.println(now);
+		System.out.println(now.getTime());
+		Date past = new Date(1600705425827L);
+		System.out.println(past);
+		
+		Calendar c = Calendar.getInstance();
+		c.set(2022,8,22,1,23,45);
+		c.set(Calendar.MONTH, 9);
+		Date d = c.getTime();
+		System.out.println(d);
+		Date now2 = new Date();
+		c.setTime(now2);
+		int y = c.get(Calendar.YEAR);
+		System.out.println("今年は" + y + "年です");
+		
+		SimpleDateFormat f = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+//		Date d2 = f.parse("2020/9/22 01:23:45");
+//		System.out.println(d2);
+		Date now3 = new Date();
+		String s = f.format(now3);
+		System.out.println("現在は" + s + "です");
 	}
 }
