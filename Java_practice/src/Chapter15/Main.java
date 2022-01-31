@@ -1,6 +1,12 @@
 package Chapter15;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.Period;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -73,5 +79,26 @@ public class Main {
 		Date now3 = new Date();
 		String s = f.format(now3);
 		System.out.println("現在は" + s + "です");
+		
+		LocalDateTime l1 = LocalDateTime.now();
+		LocalDateTime l2 = LocalDateTime.of(2020, 1, 1, 9, 5, 0, 0);
+		ZonedDateTime z1 = l2.atZone(ZoneId.of("Europe/London"));
+		LocalDateTime l3 = z1.toLocalDateTime();
+		System.out.println(l1);
+		System.out.println(z1);
+		System.out.println(l3);
+		
+		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+		LocalDate ldate = LocalDate.parse("2020/09/22", fmt);
+		LocalDate ldatep = ldate.plusDays(1000);
+		String str = ldatep.format(fmt);
+		System.out.println("1000日後は" + str);
+		
+		LocalDate d1 = LocalDate.of(2020, 1, 1);
+		LocalDate d2 = LocalDate.of(2020, 1, 4);
+		Period p1 = Period.ofDays(3);
+		Period p2 = Period.between(d1, d2);
+		LocalDate d3 = d2.plus(p2);
+		System.out.println(d3);
 	}
 }
