@@ -1,46 +1,32 @@
 package FE;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-
 public class Main {
 	public static void main(String[] args) {
-		ArrayList<Integer> points = new ArrayList<Integer>();
-		points.add(10);
-		points.add(80);
-		points.add(75);
+		ToDoList list = new ToDoList();
+		list.add(new ToDo("メール送信","201604181500", ToDo.Priority.HIGH));
+		list.add(new ToDo("ホテル予約","20160420", ToDo.Priority.LOW));
+		list.add(new ToDo("チケット購入","20160430", ToDo.Priority.MIDDLE));
+		list.add(new ToDo("報告書作成","20160428", ToDo.Priority.HIGH));
+		list.add(new ToDo("会議室予約","201605301200", ToDo.Priority.HIGH));
+		list.add(new ToDo("PC購入","20160531", ToDo.Priority.HIGH));
 		
-		for (int i : points) {
-			System.out.println(i);
+		for (ToDo todo : list.select()) {
+			todo.setState(ToDo.State.STARTED);
+			list.update(todo);
 		}
 		
-		Set<String> colors = new HashSet<String>();
-		colors.add("赤");
-		colors.add("青");
-		colors.add("黄");
-		colors.add("赤");
-		System.out.println("色は" + colors.size() + "種類");
-		for (String s : colors) {
-			System.out.println(s + "→");
-		}
-		
-		Map<String, Integer> prefs = new HashMap<String, Integer>();
-		prefs.put("京都府", 255);
-		prefs.put("東京都", 1261);
-		prefs.put("熊本県", 181);
-		int tokyo = prefs.get("東京都");
-		System.out.println("東京の人口は、" + tokyo);
-		prefs.remove("京都府");
-		prefs.put("熊本県", 182);
-		int kumamoto = prefs.get("熊本県");
-		System.out.println("熊本の人口は、" + kumamoto);
-		
-		for (String key : prefs.keySet()) {
-			int value = prefs.get(key);
-			System.out.println(key + "の人口は、" + value);
+		Condition condition1 = new Condition() {
+			public boolean test(ToDo todo) {
+				return todo.getDeadline().compareTo("20160501") < 0;
+			}
+		};
+		Condition condition2 = new Condition() {
+			public boolean test(ToDo todo) {
+				return todo.getPriority().equals(ToDo.Priority.HIGH);
+			}
+		};
+		for (ToDo todo : list.select(condition1, condition2)) {
+			System.out.println(todo);
 		}
 	}
 }
