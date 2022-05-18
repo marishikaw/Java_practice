@@ -43,7 +43,8 @@ public class ToDo {
 	public void setState(State state) { this.state = state; }
 	public int hashCode() { return id.hashCode(); }
 	// idが等価であるかどうかを判定
-	// Object型のままではidを参照できないため、oをToDo型にキャスト（型変換）する。（上位クラスから下位クラスの変換の場合は明示的に行う必要がある）
+	// Object型のままではidを参照できないため、oをToDo型にキャスト（型変換）する。
+	// ※上位クラスから下位クラスの変換の場合は明示的に行う必要がある
 	// ((ToDo) o ).メソッド名　←カッコで囲む
 	public boolean equals(Object o) {
 		return o instanceof ToDo && ((ToDo) o).id.equals(id);
