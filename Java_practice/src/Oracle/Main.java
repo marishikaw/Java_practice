@@ -2,20 +2,14 @@ package Oracle;
 
 public class Main {
 	public static void main(String[] args) {
-		int[][] dimention = {{2,5},{2,7},{8,3}};
-		for (int[] xx : dimention) {
-			for (int yy : xx) {
-				System.out.print(yy);
-			}
-			System.out.println(" ");
-		}
+		String str = "abcde";
+		System.out.println(str.substring(2,4));
 		
-		int val = 7;
-		boolean flg = true;
-		if (flg == true) {
-			do {
-					System.out.println(val);
-			} while (val > 10);
-		}
+		String st17 = "Hello, ".concat("Java!");
+		System.out.println(st17);
+		
+		String st18 = null;
+		st18 += "null";
+		System.out.println(st18);
 	}
 }
