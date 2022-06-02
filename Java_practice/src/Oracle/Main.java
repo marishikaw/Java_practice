@@ -2,14 +2,37 @@ package Oracle;
 
 public class Main {
 	public static void main(String[] args) {
-		Object a = new Sample(10);
-		Object b = new Sample(10);
-		System.out.println(a.equals(b));
+		String a = "abc";
+		String b = new String(a);
 		
-		String a12 = new String("sample");
-		String b12 = "sample";
-		System.out.print(a12 == b12);
-		System.out.print(", ");
-		System.out.print(a12.equals(b12));
+		int count = 0;
+		if (a.intern() == "abc") {
+			count++;
+		}
+		if (b.intern() == "abc") {
+			count++;
+		}
+		if (a.intern() == b.intern()) {
+			count++;
+		}
+		System.out.println(count);
+		
+		int num = 10;
+		if (num <= 10);
+		System.out.println("ok");
+		
+		if(false)
+		System.out.println("A");
+		System.out.println("B");
+		
+		int number = 1;
+		switch (number) {
+		case 1:
+		case 2:
+		case 3: System.out.println("A");
+		case 4: System.out.println("B");
+		default:
+			System.out.println("C");
+		}
 	}
 }
