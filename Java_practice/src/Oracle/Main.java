@@ -2,45 +2,18 @@ package Oracle;
 
 public class Main {
 	public static void main(String[] args) {
-		String[] array = { "A", "B", "C"};
-		for (String str : array) {
-			str = "D";
-		}
-		for (String str : array) {
-			System.out.println(str);
-		}
+		int[] array = new int[0];
+		System.out.println(array);
 		
-		int num = 10;
-		do {
-			num++;
-		} while (++num < 10);
-		System.out.println(num);
+		int c[] = new int[2 * 3];
+		int x = 2, y = 3;
+		int[] d = new int[x * y];
+		int f[][] = new int[2][];
 		
-		num = 10;
-		while (num++ <= 10) {
-			num++;
-		}
-		System.out.println(num);
-		
-		int[] array2 = { 1, 2, 3, 4, 5};
+		Item[] items = new Item[3];
 		int total = 0;
-		for (int i : array2) {
-			if (i % 2 == 0) {
-				continue;
-			}
-			total += i;
-		}
-		System.out.println(total);
-		
-		System.out.println(1 % 2);
-		
-		total = 0;
-		a: for (int i = 0; i < 5; i++) {
-			b: for (int j = 0; j < 5; j++) {
-				if (i % 2 == 0) continue a;
-				if (3 < j) break b;
-				total += j;
-			}
+		for (int i = 0; i < items.length; i++) {
+			total += items[i].price;
 		}
 		System.out.println(total);
 	}
