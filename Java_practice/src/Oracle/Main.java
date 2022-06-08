@@ -2,19 +2,32 @@ package Oracle;
 
 public class Main {
 	public static void main(String[] args) {
-		int[] array = new int[0];
-		System.out.println(array);
-		
-		int c[] = new int[2 * 3];
-		int x = 2, y = 3;
-		int[] d = new int[x * y];
-		int f[][] = new int[2][];
-		
-		Item[] items = new Item[3];
+		String[][] array = {{ "A", "B"}, { "C", "D", "E"}};
 		int total = 0;
-		for (int i = 0; i < items.length; i++) {
-			total += items[i].price;
+		for (String[] tmp : array) {
+			total += tmp.length;
 		}
-		System.out.println(total);
+	
+		test_a[] array2 = {new test_c(), null, new test_d()};
+		Object[] objArray = array2;
+		
+		int[][] arrayA = {{1, 2}, {1, 2}, {1, 2, 3}};
+		int[][] arrayB = arrayA.clone();
+		int total2 = 0;
+		
+		System.out.println(arrayA == arrayB);
+		
+		for (int[] tmp : arrayB) {
+			for (int val : tmp) {
+				total2 += val;
+				System.out.print(val + ",");
+			}
+			System.out.println();
+			
+			System.out.println(total2);
+		}
+		
+		Object obj = null;
+		System.out.println(obj);
 	}
 }
