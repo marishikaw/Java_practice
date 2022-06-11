@@ -1,11 +1,12 @@
 package Oracle;
 
 public class Sample {
-	private String value;
-	public String setValue(String value) {
-		return this.value = value;
+	public Sample() {
+		this("B");
+		System.out.println("A");
 	}
-	public String getValue() {
-		return this.value;
+	
+	public Sample(String str) {
+		System.out.println(str);
 	}
 }
