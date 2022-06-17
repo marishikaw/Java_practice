@@ -1,4 +1,4 @@
-package Chapter8;
+package Chapter08;
 
 interface Algorithm {
 	void perform(String name);
