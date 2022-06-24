@@ -12,5 +12,12 @@ public class Main {
 		int a = 10;
 		int b = a++ + a + a-- - a-- + ++a;
 		System.out.println(b);
+		
+		int a6 = 10;
+		int b6 = 10;
+		if ( 10 < a && 10 < ++b6 ) {
+			a++;
+		}
+		System.out.println(a6 + b6);
 	}
 }
