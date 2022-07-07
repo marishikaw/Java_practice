@@ -20,8 +20,8 @@ public class Main {
 		}
 		System.out.println(a6 + b6);
 		
-		Sample a9 = new Sample(10, "a");
-		Sample b9 = new Sample(10, "b");
-		System.out.println(a9.equals(b9));
+		Object a10 = new Sample(10);
+		Object b10 = new Sample(10);
+		System.out.println(a10.equals(b10));
 	}
 }
